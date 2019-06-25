@@ -1,8 +1,11 @@
 const express = require('express');
 const multer = require('multer');
 const multerConfig = require('./config/multer');
+const authMiddleware = require('./middlewares/auth')
 
 const routes = express.Router();
+
+routes.use(authMiddleware);
 
 const BoxController = require('./controllers/BoxController');
 const FileController = require('./controllers/FileController');

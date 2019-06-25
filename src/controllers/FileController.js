@@ -14,7 +14,7 @@ class FileController {
 
         await box.save();
 
-        return res.json(file);
+        return res.json({ file, user: req.userId });
     }
 }
 

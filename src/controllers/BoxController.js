@@ -3,7 +3,7 @@ const Box = require('../models/Box');
 class BoxController {
     async store(req, res) {
         const box = await Box.create({ title: req.body.title });
-        return res.json(box);
+        return res.json({ box, user: req.userId });
     }
 
     async show(req, res) {
@@ -12,7 +12,7 @@ class BoxController {
             options: { sort: { createdAt: -1 } }
         });
 
-        return res.json(box);
+        return res.json({ box, user: req.userId });
     }
 }
 
