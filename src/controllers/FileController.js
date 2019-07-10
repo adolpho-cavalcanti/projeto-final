@@ -3,6 +3,7 @@ const Box = require('../models/Box');
 
 class FileController {
     async store(req, res) {
+        console.log(req.params.id);
         const box = await Box.findById(req.params.id);
 
         const file = await File.create({

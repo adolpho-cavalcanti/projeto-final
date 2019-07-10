@@ -9,7 +9,7 @@ app.use(cors());
 
 mongoose.connect('mongodb+srv://elnino:elnino@cluster0-dcd07.mongodb.net/test?retryWrites=true&w=majority', {
     useNewUrlParser: true,
-    useCreateIndex :  true ,
+    useCreateIndex :  true,
 })
 
 app.use(express.json());
